@@ -1,4 +1,23 @@
-class Solution(object):
+#Solution 1 with back tracking algorithm
+class Solution1(object):
+    def permute(self, nums):
+        answer = []
+        
+        n = len(nums)
+
+        def tracking(cl):
+            if len(cl) == n:
+                answer.append(cl)
+                return
+            for i in range(n):
+                if nums[i] not in cl:
+                    tracking(cl + [nums[i]])
+        tracking([])
+            
+        return answer
+
+#Solution 2 with just using list and basics
+class Solution2(object):
     def permute(self, nums):
         
         list = []
