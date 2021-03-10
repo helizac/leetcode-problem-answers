@@ -2,7 +2,7 @@ class Solution(object):
     def rotate(self, matrix):
         n = len(matrix)
         for i in range(n):                                                        # For each row
-            for j in range(i+1,n):                                                # For every element except middle diagonal elements
+            for j in range(i+1,n):                                                # For each element except middle diagonal elements
                 matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]           # Swap the top and bottom of the diagonal imaginary line
         
         for i in range(n):                                                        # For each row
